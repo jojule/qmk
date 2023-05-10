@@ -19,9 +19,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    LCTL_T(KC_TAB), LALT_T(KC_ESC), LGUI_T(KC_BSPC), 
 	    LT(2,KC_SPC), LT(1,KC_NO), LSFT_T(KC_ENT)),
 	[1] = LAYOUT_split_3x5_3(
-	    KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, 
-	    KC_0, LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), LSFT(KC_7), LSFT(KC_8), LSFT(KC_9), 
-	    LSFT(KC_0), KC_DOT, KC_UNDS, KC_MINS, KC_PLUS, KC_EQL, KC_QUOT, KC_DQUO, CKC_AE, CKC_OE, KC_SLSH, 
+	    KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, 
+	    LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), LSFT(KC_7), LSFT(KC_8), LSFT(KC_9), LSFT(KC_0), 
+	    KC_DOT, KC_UNDS, KC_MINS, KC_PLUS, KC_EQL, KC_QUOT, KC_DQUO, CKC_AE, CKC_OE, KC_SLSH, 
 	    KC_TRNS, KC_TRNS, KC_TRNS, 
 	    LT(3,KC_NO), KC_NO, KC_TRNS),
 	[2] = LAYOUT_split_3x5_3(
@@ -42,25 +42,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case CKC_AE:
       if (record->event.pressed) {
-        // when the keycode CKC_AE is pressed
         SEND_STRING(SS_LALT("u")"a");
       }
       break;
     case CKC_OE:
       if (record->event.pressed) {
-        // when the keycode CKC_OE is pressed
         SEND_STRING(SS_LALT("u")"o");
       }
       break;
     case CKC_CAE:
       if (record->event.pressed) {
-        // when the keycode CKC_AE is pressed
         SEND_STRING(SS_LALT("u")"A");
       }
       break;
     case CKC_COE:
       if (record->event.pressed) {
-        // when the keycode CKC_OE is pressed
         SEND_STRING(SS_LALT("u")"O");
       }
       break;
