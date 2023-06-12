@@ -1,5 +1,8 @@
 #include QMK_KEYBOARD_H
 
+#undef TAPPING_TERM
+#define TAPPING_TERM 100
+
 bool is_app_switch_active = false;
 uint16_t app_switch_timer = 0;
 
